@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <div id="screen-home" class="screen active">
+    <h1>Study</h1>
+    <div id="domain-list"></div>
+  </div>
+
+  <div id="screen-objectives" class="screen">
+    <button id="back-home" class="btn-back">← Back</button>
+    <h2 id="obj-domain-title"></h2>
+    <div id="btn-practice-domain-wrap">
+      <button id="btn-practice-domain" class="btn-primary">Practice All</button>
+    </div>
+    <div id="objective-list"></div>
+  </div>
+
+  <div id="screen-quiz" class="screen">
+    <div id="quiz-header">
+      <span id="quiz-filter-label"></span>
+      <span id="quiz-progress"></span>
+    </div>
+    <div id="quiz-card">
+      <p id="quiz-question"></p>
+      <div id="quiz-choices"></div>
+      <div id="quiz-feedback" class="hidden">
+        <p id="feedback-result"></p>
+        <p id="feedback-correct"></p>
+        <p id="feedback-explanation"></p>
+        <p id="feedback-source"></p>
+        <button id="btn-next" class="btn-primary">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="screen-done" class="screen">
+    <div id="done-card">
+      <h2>Session Complete</h2>
+      <p id="done-score"></p>
+      <button id="btn-restart" class="btn-primary">Restart</button>
+      <button id="btn-home" class="btn-secondary">Home</button>
+    </div>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

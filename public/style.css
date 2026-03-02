@@ -1,0 +1,185 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #f2f2f0;
+  --card: #ffffff;
+  --text: #1e1e1e;
+  --sub: #555;
+  --accent: #3a6ea5;
+  --accent-hover: #2d5888;
+  --correct: #2e7d32;
+  --wrong: #b71c1c;
+  --border: #ddd;
+  --radius: 8px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+#app {
+  width: 100%;
+  max-width: 680px;
+}
+
+.screen { display: none; }
+.screen.active { display: block; }
+
+h1 { font-size: 2rem; margin-bottom: 1.5rem; }
+h2 { font-size: 1.4rem; margin-bottom: 1rem; }
+
+.domain-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin-bottom: .75rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: border-color .15s;
+}
+.domain-card:hover { border-color: var(--accent); }
+.domain-card .code { font-size: 1.2rem; font-weight: 700; }
+.domain-card .meta { color: var(--sub); font-size: .875rem; }
+
+.obj-row {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: .75rem 1rem;
+  margin-bottom: .5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: border-color .15s;
+}
+.obj-row:hover { border-color: var(--accent); }
+.obj-row .obj-code { font-weight: 700; font-size: .95rem; min-width: 64px; }
+.obj-row .obj-title { color: var(--text); font-size: .9rem; flex: 1; margin: 0 1rem; }
+.obj-row .obj-count { color: var(--sub); font-size: .8rem; white-space: nowrap; }
+
+#btn-practice-domain-wrap { margin-bottom: 1rem; }
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: .65rem 1.4rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background .15s;
+}
+.btn-primary:hover { background: var(--accent-hover); }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: .65rem 1.4rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: .5rem;
+  transition: background .15s;
+}
+.btn-secondary:hover { background: #e8f0fb; }
+
+.btn-back {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: .95rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  padding: 0;
+}
+.btn-back:hover { text-decoration: underline; }
+
+#quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: .875rem;
+  color: var(--sub);
+}
+
+#quiz-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+}
+
+#quiz-question {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.choice-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: .75rem 1rem;
+  font-size: .95rem;
+  cursor: pointer;
+  margin-bottom: .5rem;
+  line-height: 1.4;
+  transition: border-color .1s, background .1s;
+}
+.choice-btn:hover:not(:disabled) { border-color: var(--accent); background: #e8f0fb; }
+.choice-btn:disabled { cursor: default; }
+.choice-btn.correct { border-color: var(--correct); background: #e8f5e9; color: var(--correct); }
+.choice-btn.wrong { border-color: var(--wrong); background: #ffebee; color: var(--wrong); }
+
+#quiz-feedback {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+#quiz-feedback.hidden { display: none; }
+
+#feedback-result {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+#feedback-result.correct { color: var(--correct); }
+#feedback-result.wrong { color: var(--wrong); }
+
+#feedback-correct { margin-bottom: .5rem; font-size: .9rem; }
+#feedback-explanation {
+  color: var(--sub);
+  font-size: .875rem;
+  line-height: 1.55;
+  max-height: 120px;
+  overflow: hidden;
+  margin-bottom: .5rem;
+}
+#feedback-source { font-size: .8rem; color: #999; margin-bottom: 1rem; }
+
+#btn-next { margin-top: .25rem; }
+
+#done-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  text-align: center;
+}
+#done-score { font-size: 1.15rem; color: var(--sub); margin: 1rem 0 2rem; }
